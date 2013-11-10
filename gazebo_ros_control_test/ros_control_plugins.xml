@@ -1,0 +1,11 @@
+<library path="lib/libanti_gravity_controller">
+
+  <class
+    name="gazebo_ros_control_test/AntiGravityController"
+    type="gazebo_ros_control::AntiGravityController"
+    base_class_type="controller_interface::ControllerBase">
+    <description>
+      A controller that compensates the gravity.
+    </description>
+  </class>
+</library>

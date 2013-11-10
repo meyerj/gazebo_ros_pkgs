@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Why does every model need a robot_description for gazebo_ros_control? -->
+  <param name="robot_description" value="&lt;robot/&gt;" />
+
+  <!-- Spawn hovering can -->
+  <node pkg="gazebo_ros" type="spawn_model" name="hovering_can_spawner" output="screen" args="
+    -model hovering_can
+    -file $(find gazebo_ros_control_test)/model/hovering_can/model.sdf
+    -sdf
+    -z 1.0
+  "/>
+
+  <!-- Spawn anti_gravity_controller -->
+  <node pkg="controller_manager" type="spawner" name="anti_gravity_controller" output="screen" args="anti_gravity_controller">
+    <param name="type" value="gazebo_ros_control_test/AntiGravityController" />
+  </node>
+
+</launch>
