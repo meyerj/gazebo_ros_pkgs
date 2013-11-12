@@ -70,12 +70,18 @@ public:
     torque_ = torque;
   }
 
+  double getMass();
+  gazebo::physics::InertialPtr getInertial();
+
 private:
   gazebo::physics::ModelPtr parent_model_;
 
   gazebo::math::Pose pose_;
   gazebo::math::Vector3 force_;
   gazebo::math::Vector3 torque_;
+
+  double mass_;
+  gazebo::math::Vector3 inertia_;
 };
 
 }

@@ -54,6 +54,16 @@ void WrenchRobotHWSim::writeSim(ros::Time time, ros::Duration period)
   parent_model_->GetLink()->AddTorque(torque_);
 }
 
+double WrenchRobotHWSim::getMass()
+{
+    return parent_model_->GetLink()->GetInertial()->GetMass();
+}
+
+gazebo::physics::InertialPtr WrenchRobotHWSim::getInertial()
+{
+    return parent_model_->GetLink()->GetInertial();
+}
+
 }
 
 #include <pluginlib/class_list_macros.h>

@@ -45,7 +45,7 @@ public:
 
   virtual void update(const ros::Time &time, const ros::Duration &period)
   {
-    gazebo::math::Vector3 gravity(0.0, 0.0, 9.80);
+    gazebo::math::Vector3 gravity(0.0, 0.0, 9.80 * hw_->getMass() * 0.999);
     hw_->setWrench(gravity);
   }
 
