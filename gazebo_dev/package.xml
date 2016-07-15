@@ -20,5 +20,6 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_export_depend>libgazebo5-dev</build_export_depend>
+  <exec_depend>gazebo5</exec_depend>
 
 </package>
